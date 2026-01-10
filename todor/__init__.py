@@ -4,19 +4,18 @@ from flask_sqlalchemy import SQLAlchemy
 db = SQLAlchemy()
 
 def create_app():
-   
     app = Flask(__name__)
 
-    # Configuración del poyecto 
+    # Configuración del proyecto
     app.config.from_mapping(
-        DEBUG = False,
-        SECRET_KEY = 'devtod',
-        SQLALCHEMY_DATABASE_URI = "sqlite:///todolist.db"
+        DEBUG=False,
+        SECRET_KEY='devtod',
+        SQLALCHEMY_DATABASE_URI="sqlite:///todolist.db"
     )
 
     db.init_app(app)
 
-    # Registrar Bluprint
+    # Registrar Blueprints
     from . import todo
     app.register_blueprint(todo.bp)
 
@@ -31,3 +30,6 @@ def create_app():
         db.create_all()
 
     return app
+
+# Crear una instancia global para Gunicorn
+app = create_app()
