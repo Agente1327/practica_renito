@@ -1,0 +1,97 @@
+{% extends 'base.html' %}
+
+{% block title %}Inicio{% endblock %}
+
+{% block content %}
+
+<style>
+body {
+    background: radial-gradient(circle at top, #001a0f, #000);
+    color: #00ff99;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Contenedor principal */
+.container-sm {
+    background: rgba(0, 0, 0, 0.85);
+    border: 2px solid #00ff99;
+    box-shadow: 0 0 25px #00ff99;
+    border-radius: 15px;
+    padding: 40px;
+    margin-top: 80px;
+}
+
+/* Título futurista */
+h1 {
+    color: #00ff99;
+    text-shadow: 0 0 15px #00ff99;
+}
+
+/* Texto */
+p, .lead {
+    color: #baffea;
+}
+
+/* Línea separadora */
+hr {
+    border-top: 1px solid #00ff99;
+    box-shadow: 0 0 10px #00ff99;
+}
+
+/* Botones futuristas */
+.btn {
+    border-radius: 30px;
+    padding: 12px 28px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    transition: 0.3s ease-in-out;
+}
+
+/* Botón Iniciar sesión */
+.btn-primary {
+    background: transparent;
+    border: 2px solid #00ff99;
+    color: #00ff99;
+    box-shadow: 0 0 10px #00ff99;
+}
+
+.btn-primary:hover {
+    background: #00ff99;
+    color: black;
+    box-shadow: 0 0 25px #00ff99;
+}
+
+/* Botón Registrarse */
+.btn-secondary {
+    background: transparent;
+    border: 2px solid #00cc77;
+    color: #00cc77;
+    box-shadow: 0 0 10px #00cc77;
+}
+
+.btn-secondary:hover {
+    background: #00cc77;
+    color: black;
+    box-shadow: 0 0 25px #00cc77;
+}
+</style>
+
+<div class="container-sm text-center">
+    <h1 class="display-3">Bienvenido a nuestra lista de tareas en la UTVT (Practica demostrativa con FLASK)</h1>
+
+    <p class="lead">
+        Aquí puedes llevar un registro de todas tus tareas y tener una vista general de tus
+        responsabilidades, Puedes usarlo en una institución, empresa o de forma personal
+    </p>
+
+    <hr class="my-4">
+
+    <p>¿Tienes una cuenta?</p>
+
+    <div class="d-flex justify-content-center">
+        <a href="{{url_for('auth.login')}}" class="btn btn-primary mx-2">Iniciar sesión</a>
+        <a href="{{url_for('auth.register')}}" class="btn btn-secondary mx-2">Registrarse</a>
+    </div>
+</div>
+
+{% endblock %}
