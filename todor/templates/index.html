@@ -3,6 +3,7 @@
 {% block title %}Inicio{% endblock %}
 
 {% block content %}
+<<<<<<< HEAD
 
 <style>
 body {
@@ -94,4 +95,22 @@ hr {
     </div>
 </div>
 
+=======
+    <div class="container-sm text-center">
+        <h1 class="display-3">Bienvenido a nuestra lista de tareas en la UTVT (Practica demostrativa con FLASK)</h1>
+
+        <p class="lead">Aquí puedes llevar un registro de todas tus tareas y tener una vista general de tus
+        responsabilidades, Puedes usarlo en una institución, empresa o de forma personal</p>
+
+
+        <hr class="my-4">
+
+        <p>¿Tienes una cuenta?</p>
+
+        <div class="d-flex justify-content-center">
+            <a href="{{url_for('auth.login')}}" class="btn btn-primary mx-2">Iniciar sesión</a>
+            <a href="{{url_for('auth.register')}}" class="btn btn-secondary mx-2">Registrarse</a>
+        </div>
+    </div>
+>>>>>>> 705c91f5b296a0870cf5ec7d0c5ea40c55d17568
 {% endblock %}
